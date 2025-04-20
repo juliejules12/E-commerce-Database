@@ -1,100 +1,74 @@
-# 🛒 E-Commerce Database
+🛍️ E-commerce Database Project
+📌 Overview
+This project presents a robust e-commerce relational database schema designed for managing brands, products, categories, and attributes such as size, color, and stock levels.
 
-A collaborative SQL database project designed for a modern e-commerce platform. It includes a well-structured schema, ER diagram, and sample data—ideal for learning, development, and testing.
+The database supports:
 
----
+Designer fashion and sportswear (shoes, clothes, bags)
 
-## 🛠️ Features
+Gadgets and high-tech accessories
 
-- **Structured Tables**: Brands, products, categories, sizes, variations, and attributes  
-- **Relationships**: Foreign keys and constraints to ensure data integrity  
-- **Data Flow**: Optimised entity relationships for typical e-commerce operations  
+Flexible attribute and variation management
 
----
+🧠 Group 276 collaborated on the design, implementation, and documentation.
 
-## 🗃️ Tables Created
+📁 Project Structure
+pgsql
+Copy
+Edit
+ecommerce-database/
+├── ecommerce.sql            -- Full schema: tables, constraints, relationships
+├── insert_sample.sql        -- Sample data for testing
+├── E-commerce-Database.drawio.png -- Visual ERD (Entity Relationship Diagram)
+├── README.md                -- This file
+⚙️ How to Use
+📌 Requirements
+MySQL Server (e.g., MySQL 8+ or MariaDB)
 
-### 🛍️ Product Information
-- `product`: Stores general product details (e.g., name, base price, brand)  
-- `product_category`: Classifies products into categories (e.g., clothing, electronics)  
-- `product_item`: Represents purchasable items with specific variations  
-- `product_image`: Stores image URLs or file references  
-- `brand`: Product brand details  
+Any SQL client or terminal
 
-### 🎨 Variations & Attributes
-- `product_variation`: Links products to size and colour variations  
-- `color`: Available colour options (name and hex code)  
-- `size_category`: Groups sizes (e.g., clothing, shoes)  
-- `size_option`: Lists specific sizes (e.g., S, M, L, 42)  
-- `product_attribute`: Stores product-specific attributes (e.g., material, weight)  
-- `attribute_category`: Groups attributes into categories (e.g., physical, technical)  
-- `attribute_type`: Defines attribute types (e.g., text, number, boolean)  
+🔧 Steps
+Create the database
 
----
+sql
+Copy
+Edit
+CREATE DATABASE ecommerce;
+USE ecommerce;
+Run the schema script
 
-## 📁 Files Included
+Import ecommerce.sql in your SQL tool or via terminal:
 
-- `ecommerce.sql` – SQL schema (tables, constraints, relationships)  
-- `insert_sample.sql` – Sample data for testing  
-- `E-commerce-Database.drawio.png` – ER diagram  
+bash
+Copy
+Edit
+mysql -u root -p ecommerce < ecommerce.sql
+Insert sample data
 
----
+bash
+Copy
+Edit
+mysql -u root -p ecommerce < insert_sample.sql
+🗺️ Entity Relationship Diagram (ERD)
 
-## ⚙️ Setup Instructions
+The ERD shows how brands, categories, and products are connected, including variations like color, size, and custom attributes.
 
-1. Create the database:
-   ```sql
-   CREATE DATABASE ecommerce;
-mysql -u your_user -p ecommerce < ecommerce.sql
-mysql -u your_user -p ecommerce < insert_sample.sql
+🧪 Example Queries
+Some test queries you can try after loading the data:
 
-🖼️ ER Diagram
-The Entity-Relationship Diagram (E-commerce-Database.drawio.png) visually represents the structure of the database.
-It shows how tables such as products, variations, categories, and attributes are connected through relationships and foreign keys.
+sql
+Copy
+Edit
+-- All Products
+SELECT * FROM product;
 
-The diagram was created using draw.io, and it helps developers and learners quickly understand the database design and data flow between entities.
+-- Products with brand & category
+SELECT p.name, b.name AS brand, c.name AS category
+FROM product p
+JOIN brand b ON p.brand_id = b.brand_id
+JOIN product_category c ON p.category_id = c.category_id;
 
-🧪 Sample Data Preview
-A few rows of sample data included for testing:
-
-Products Table
-
-
-id	name	price	brand_id	category_id
-1	T-Shirt Basic	15.99	1	2
-2	Running Shoes	89.99	2	3
-Colors Table
-
-
-id	name	hex_code
-1	Red	#FF0000
-2	Blue	#0000FF
-Sizes Table
-
-
-id	value
-1	S
-2	M
-3	L
-The sample data includes users, categories, products, colours, sizes, attributes, and relationships for a functional e-commerce flow.
-
-🤝 Group Contribution
-
-This project was developed collaboratively by Group 27/6.
-All members contributed to planning, database design, sample data creation, and documentation.
-
-📂 Submission
-✅ ERD file
-
-✅ SQL schema
-
-✅ Sample data
-
-✅ Public GitHub repository for access and review
-
-📜 License
-
-This project is licensed for academic and educational purposes only.
-© Group 27/6 – All rights reserved.
-
-
+-- Products over $1000
+SELECT name, base_price FROM product WHERE base_price > 1000;
+🤝 Contributors
+Group 276
