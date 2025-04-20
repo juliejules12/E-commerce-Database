@@ -44,8 +44,11 @@ A collaborative SQL database project designed for a modern e-commerce platform. 
 
 1. Create the database:
    ```sql
-   CREATE DATABASE ecommerce;
-Import schema and data:
+
+mysql -u your_user -p ecommerce < ecommerce.sql
+mysql -u your_user -p ecommerce < insert_sample.sql
+
+ :
 
 bash
 Copy
