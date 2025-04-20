@@ -44,17 +44,10 @@ A collaborative SQL database project designed for a modern e-commerce platform. 
 
 1. Create the database:
    ```sql
-
+   CREATE DATABASE ecommerce;
 mysql -u your_user -p ecommerce < ecommerce.sql
 mysql -u your_user -p ecommerce < insert_sample.sql
 
- :
-
-bash
-Copy
-Edit
-mysql -u your_user -p ecommerce < ecommerce.sql
-mysql -u your_user -p ecommerce < insert_sample.sql
 🖼️ ER Diagram
 The Entity-Relationship Diagram (E-commerce-Database.drawio.png) visually represents the structure of the database.
 It shows how tables such as products, variations, categories, and attributes are connected through relationships and foreign keys.
@@ -87,7 +80,7 @@ The sample data includes users, categories, products, colours, sizes, attributes
 
 🤝 Group Contribution
 
-This project was developed collaboratively by Group 276.
+This project was developed collaboratively by Group 27/6.
 All members contributed to planning, database design, sample data creation, and documentation.
 
 📂 Submission
@@ -100,6 +93,8 @@ All members contributed to planning, database design, sample data creation, and 
 ✅ Public GitHub repository for access and review
 
 📜 License
-This project is licensed for academic and educational purposes only.
 
-© Group 276 – All rights reserved.
+This project is licensed for academic and educational purposes only.
+© Group 27/6 – All rights reserved.
+
+
