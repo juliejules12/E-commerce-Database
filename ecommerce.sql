@@ -1,5 +1,5 @@
 -- ===================================
--- E-COMMERCE DATABASE SCHEMA
+-- E-COMMERCE DATABASE SCHEMA GROUP 276
 -- ===================================
 
 -- 1. Brand Table
