@@ -77,4 +77,4 @@ Development: Visual Studio Code, Git, GitHub
 
 🧑‍🤝‍🧑 Teamwork
 
-This project was completed by Group 276 as part of a database design assignment. Responsibilities were shared among members for schema design, sample data generation, ERD visualization, and documentation.
+This project was completed by Group 276 as part of a database design assignment. Responsibilities were shared among members for schema design, sample data generation, ERD visualization and documentation.
