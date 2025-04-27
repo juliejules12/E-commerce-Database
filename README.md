@@ -3,7 +3,7 @@
 **Group 276**  
 MySQL Relational Database for an E-Commerce Platform
 
----
+
 
 ## 📦 Project Overview
 
